@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>digonal nav</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="../css/all.css">
+    <!-- Custom Style   -->
+    <link rel="stylesheet" href="../css/Style.css">
+    <!-- ------------ AOS Library ------------------------- -->
+    <link rel="stylesheet" href="../css/aos.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+    
+    <style>
+ 
+html, body {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+body {
+   font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.7;
+  perspective-origin: 0% 50%;
+  perspective: 800px;
+  background: rgba(0, 0, 0, 0.781);
+  overflow: hidden;
+
+
+    
+}
+nav, main {
+  transition: transform 150ms ease-out;
+}
+nav {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 16em;
+  background-color:rgba(0, 0, 0, 0.781);
+  transform: translateX(-16em);
+}
+nav.menu-active {
+  transform: translateX(0);
+}
+nav.menu-hover {
+  transform: translateX(-15em);
+}
+nav h1 {
+  z-index: 100;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -65px;
+  height: 60px;
+  width: 65px;
+  line-height: 60px;
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  background-color:  ORANGERED;
+  cursor: pointer;
+}
+nav h1:hover {
+  color: #000000;
+  font-weight: 600;
+  background: rgb(255, 255, 255);
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  padding: 0 1em;
+  width: 100%;
+  height: 60px;
+  color: #9dc6d1;
+  line-height: 60px;
+  background-color: transparent;
+    transition: all 0.5s ease-in;
+}
+nav li:nth-of-type(2n) {
+  background-color: transparent;      
+}
+nav li:hover {
+  background: ORANGERED;
+    color: white;
+     
+}
+main {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color:rgba(44, 38, 38, 0.5); 
+  transform-origin: 0% 50%;
+    background-size:contain;
+}
+main:after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, transparent, rgba(61, 52, 52, 0.5));
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 150ms ease-out, visibility 0s 150ms;
+}
+main.menu-active {
+  border-radius: 0.001px;
+  transform: translateX(16em) rotateY(15deg);
+}
+main.menu-active:after {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 150ms ease-out, visibility 0s;
+}
+main.menu-hover {
+  border-radius: 0.001px;
+  transform: translateX(1em) rotateY(1deg);
+}
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  max-width:100%;
+  overflow: auto;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  /* height: 100%; */
+  
+
+  
+}
+section{
+  position: relative !important;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width:100%;
+  height: 100%;
+  overflow: auto;
+  color: white;
+  background-color: #69595b;
+  /* background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);  */
+  background-image: url(VerBlack.jpg); 
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  /* justify-content: center; */
+  
+}
+.first{
+  width: 100%;
+  justify-content:stretch;
+  position: relative;
+  align-content: center;
+  background-color:transparent;
+  padding: 20px;
+
+  
+  
+}
+
+section h1 {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+section p {
+  display: inline-block;
+  margin: 16px 0;
+
+}
+.firstbanner{
+  position: relative;
+  margin-top: 50px;
+  border-radius: 25px;
+  margin-left: 2.5%;
+  width: 95%; 
+  background:rgba(0, 0, 0, 0.781);
+  padding: 70px;
+  display: inline-flex;
+  justify-content: center;
+  
+
+  /* align-items: center; */
+}
+
+.firstbanner .profilepic img{
+  width: 150px;
+  border: 8px solid rgb(226, 255, 217);
+  border-radius: 100px;
+  
+}
+
+.details{
+  width:300px;
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  margin-left: 10%;
+
+}
+.details li{
+  display: flex;
+  font-size: 10px;
+  
+}
+.details li h3{
+  margin-left: 20px;
+  font-family: "Poppins", cursive;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+.details li h2{
+  color: gold;
+  font-family: "Poppins", cursive;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.contain{
+  position:relative;
+  background-color: transparent;
+  width: 98%;
+  padding: 20px;
+  margin: 1%;
+  display: inline-flex;
+  
+}
+.sidebuttonbar{
+  position: relative;
+  top:0;
+  left: 0;
+  margin-left: 0px;
+  width: 70px;
+  /* height: 100%; */
+  justify-content: center;
+  background-color: transparent;
+  flex-direction: column;
+  padding: 20px;
+}
+.sidebuttonbar a i{
+  position: relative;
+  top: 49%;
+  zoom: 2;
+  /* width:40px; */
+}
+.secondcont{
+  position: relative;
+  width: calc(100% - 80px);
+  height:100%;
+  padding: 10px;
+  margin-left: 1%;
+  background-color: transparent;
+}
+.listcont{
+  position: relative;
+  width: 100%;
+  /* margin-left: %; */
+  
+  padding: 10px;
+  height: 600px;
+  /* overflow: hidden; */
+
+}
+.blog{
+  height: 100% !important;
+  background: transparent !important;
+}
+
+
+.listcont2{
+ width: 100%;
+ /* height: 500px; */
+ background-color: transparent;      
+ flex-wrap: wrap;
+ padding: 10px;
+ display: inline-flex;                                                                                    
+ justify-content: space-evenly;
+}
+.graphy{
+  width: 700px;
+  height: 500px;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #eec0c6;
+  display: inline-flex;
+
+}
+.average{
+  width: 550px;
+  height: 500px;
+  margin-top: 30px;
+  padding: 10px;
+  background-color: aliceblue;
+  display: inline-flex;
+}
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="menu-activea">
+  <h1>MENU</h1>
+  <ul>
+    <a href="">
+      <li>HOME</li>
+    </a>
+    <a href="">
+      <li>GALLERY</li>
+    </a>
+    <a href="">
+      <li>SERVICES</li>
+    </a>
+    <a href="">
+      <li>WORK</li>
+    </a>
+    <a href="../Index.html">
+      <li>LOG OUT</li>
+    </a>
+    
+  </ul>
+</nav>
+<main>
+  <section>
+    <!-- first banner -->
+    <div class="first">
+      <div class="firstbanner">
+        <div class="profilepic">
+          <img src="../img/avatar.svg" alt="">
+        </div>
+        <div class="profileinfo">
+          <ul class="details">
+            <li>
+              <h2>UserName : </h2>
+              <h3>EMMYTHEO</h3>
+            </li>
+            <li>
+              <h2>Car Model : </h2>
+              <h3>Toyota Rav4</h3>
+            </li>
+            <li>
+              <h2>Plan : </h2>
+              <h3>FixBot Premium</h3>
+            </li>
+            <li>
+              <h2>Expires : </h2>
+              <h3>In 6 Months</h3>
+            </li>
+            <li>
+              <h2>IUC : </h2>
+              <h3>0012-1311-1234-4422-1453</h3>
+            </li>
+            <li>
+      
+            </li>
+      
+          </ul>
+      
+        </div>
+       
+      </div>
+
+    </div>
+    
+    <div class="contain">
+      <div class="sidebuttonbar">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div class="secondcont">
+        <div class="listcont ">
+          <div class="blog">
+            <div class="container">
+              <div class="owl-carousel owl-theme blog-post">
+                <div class="blog-content" >
+                  <img src="../assets/Blog-post/post-1.jpg" alt="post-1">
+                  <div class="blog-title">
+                    <h3>Track your car</h3>
+                    <button class="btn btn-blog">Learn More</button>
+          
+                  </div>
+                </div>
+                <div class="blog-content" >
+                  <img src="../assets/Blog-post/post-3.jpg" alt="post-1">
+                  <div class="blog-title">
+                    <h3>Diagnose your Car's faults</h3>
+                    <button class="btn btn-blog">Learn More</button>
+          
+                  </div>
+                </div>
+                <div class="blog-content">
+                  <img src="../assets/Blog-post/post-2.jpg" alt="post-1">
+                  <div class="blog-title">
+                    <h3>Routine fluid level update</h3>
+                    <button class="btn btn-blog">Learn More</button>
+          
+                  </div>
+                </div>
+                <div class="blog-content" >
+                  <img src="../assets/Blog-post/post-5.jpg" alt="post-1">
+                  <div class="blog-title">
+                    <h3>Call/Chat with your Car in Real-time</h3>
+                    <button class="btn btn-blog">Learn More</button>
+          
+                  </div>
+                </div>
+                <div class="blog-content">
+                  <img src="../assets/Blog-post/post-5.jpg" alt="post-1">
+                  <div class="blog-title">
+                    <h3>Call/Chat with your Car in Real-time</h3>
+                    <button class="btn btn-blog">Learn More</button>
+                
+                  </div>
+                </div>
+                <div class="blog-content">
+                  <img src="../assets/Blog-post/post-5.jpg" alt="post-1">
+                  <div class="blog-title">
+                    <h3>Call/Chat with your Car in Real-time</h3>
+                    <button class="btn btn-blog">Learn More</button>
+                
+                  </div>
+                </div>
+                <div class="blog-content">
+                  <img src="../assets/Blog-post/post-5.jpg" alt="post-1">
+                  <div class="blog-title">
+                    <h3>Call/Chat with your Car in Real-time</h3>
+                    <button class="btn btn-blog">Learn More</button>
+                
+                  </div>
+                </div>
+              </div>
+              <div class="owl-navigation">
+                <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listcont2">
+          <div class="graphy">
+
+          </div>
+          <div class="average">
+
+          </div>
+
+        </div>
+
+      </div>
+      
+    </div>
+
+     
+  </section>
+</main>
+<script src="jquery-3.3.1.js"></script>
+<script src="w3.js"></script>
+<!-- Custom Javascript file -->
+<script src="../js/main.js"></script>
+<script src="/__/firebase/7.15.0/firebase-app.js"></script>
+<script src="/__/firebase/7.15.0/firebase-analytics.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script> -->
+<script>
+    
+  
+
+  
+    (function() {
+
+  var nav = $('nav'),
+    menu = $('nav h1'),
+    main = $('main'),
+  	open = false,
+  	hover = false;
+
+  menu.on('click', function() {
+		open = !open ? true : false;
+    nav.toggleClass('menu-active');
+    main.toggleClass('menu-active');
+    nav.removeClass('menu-hover');
+    main.removeClass('menu-hover');
+    console.log(open);
+  });
+  menu.hover( 
+    function() {
+      if (!open) {
+      	nav.addClass('menu-hover');
+      	main.addClass('menu-hover');
+      }
+    }, function() {
+      nav.removeClass('menu-hover');
+      main.removeClass('menu-hover');
+    }
+  );
+  const firebaseConfig = {
+        apiKey: "AIzaSyAyh0LoymfZHbTu3mWyXYs2Z7pMz7lnF_8",
+        authDomain: "obd-data-track.firebaseapp.com",
+        databaseURL: "https://obd-data-track.firebaseio.com",
+        projectId: "obd-data-track",
+        storageBucket: "obd-data-track.appspot.com",
+        messagingSenderId: "49352787430",
+        appId: "1:49352787430:web:3f0bd5e0451f94f7964227",
+        measurementId: "G-VR292V8GVH"
+      };
+      // Initialize Firebase
+      // firebase.initializeApp(firebaseConfig);
+      // firebase.analytics();
+    
+})();
+  
+
+  
+  
+
+    
+</script>
+</body>
+</html>
